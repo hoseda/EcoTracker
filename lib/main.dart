@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
+
 void main() {
-  runApp(
-    const App()
-);
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
@@ -25,10 +24,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
-      ),
-    );
+    return Scaffold(appBar: AppBar(title: const Text('Home Page')));
   }
 }
