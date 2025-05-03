@@ -1,4 +1,4 @@
-import 'package:eco_tracker/main.dart';
+import 'package:eco_tracker/src/features/home/presentation/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:eco_tracker/src/core/constants/colors.dart';
 import 'dart:async';
