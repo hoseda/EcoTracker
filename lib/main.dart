@@ -1,5 +1,5 @@
+import 'package:eco_tracker/src/features/splash/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
-
 
 void main() {
   runApp(const App());
@@ -14,7 +14,7 @@ class App extends StatelessWidget {
       title: 'Home Page',
       theme: ThemeData(primarySwatch: Colors.blue),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }
