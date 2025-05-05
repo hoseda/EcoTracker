@@ -1,7 +1,12 @@
-import 'package:eco_tracker/src/features/splash/presentation/splash_screen.dart';
+import 'package:eco_tracker/src/features/home/presentation/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-void main() {
+void main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  await Future.delayed(const Duration(seconds: 2));
+  FlutterNativeSplash.remove();
   runApp(const App());
 }
 
@@ -14,8 +19,7 @@ class App extends StatelessWidget {
       title: 'Home Page',
       theme: ThemeData(primarySwatch: Colors.blue),
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home: const HomePage(),
     );
   }
 }
-
