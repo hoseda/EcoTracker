@@ -17,7 +17,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Home Page',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(fontFamily: 'psans'),
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
     );

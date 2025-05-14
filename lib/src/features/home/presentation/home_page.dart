@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                         // todo : user name
                         "Hello , Maria Zorah!",
                         style: TextStyle(
-                          fontFamily: "psans",
+
                           fontSize: 19,
                           color: Colors.white,
                           fontWeight: FontWeight.w500,
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                         // todo : greeting base on time
                         "Good Morning",
                         style: TextStyle(
-                          fontFamily: "psans",
+
                           color: iconbg,
                           fontWeight: FontWeight.w500,
                         ),
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                             // todo : user points
                             "2,012",
                             style: TextStyle(
-                              fontFamily: "psans",
+
                               color: Colors.white,
                               fontSize: 15,
                               fontWeight: FontWeight.w500,
@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                             const Text(
                               "Weekly Challenges !!!",
                               style: TextStyle(
-                                fontFamily: "psans",
+
                                 fontSize: 19,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                             const Text(
                               "Win and get Voucher",
                               style: TextStyle(
-                                fontFamily: "psans",
+
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -139,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                                 "Start now",
                                 style: TextStyle(
                                   color: primary,
-                                  fontFamily: "psans",
+
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -267,11 +267,17 @@ class _HomePageState extends State<HomePage> {
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
-                                    // todo : use help variable in here for ? icon
-                                    Icon(
-                                      Icons.help_outline_rounded,
-                                      size: 20,
-                                      color: iconbg,
+
+                                    Tooltip(
+                                      message: "help me",
+                                      textStyle: TextStyle(
+                                        color: Colors.white
+                                      ),
+                                      child: Icon(
+                                        Icons.help_outline_rounded,
+                                        size: 20,
+                                        color: iconbg,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -317,7 +323,7 @@ class _HomePageState extends State<HomePage> {
                                               // todo : user points
                                               "+$point",
                                               style: TextStyle(
-                                                fontFamily: "psans",
+
                                                 color: secondary,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
