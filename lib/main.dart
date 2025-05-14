@@ -17,7 +17,12 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Home Page',
-      theme: ThemeData(fontFamily: 'psans'),
+      theme: ThemeData(
+        fontFamily: 'psans',
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.transparent,
+        ),
+      ),
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
     );
