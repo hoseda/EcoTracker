@@ -1,3 +1,4 @@
+import 'package:eco_tracker/src/features/home/presentation/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,9 +12,6 @@ class EcoActions extends StatefulWidget {
 class _ProfileState extends State<EcoActions> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(child: const Text("Actions")),
-    );
+    return Center(child: const Text("Actions"));
   }
 }

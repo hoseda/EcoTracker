@@ -1,10 +1,8 @@
 import 'package:eco_tracker/src/core/constants/colors.dart';
 import 'package:eco_tracker/src/core/routing/routes.dart';
-import 'package:eco_tracker/src/features/home/application/bottom_navbar_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
+
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({super.key});
@@ -15,30 +13,9 @@ class BottomNavbar extends StatefulWidget {
 
 class _BottomNavbarState extends State<BottomNavbar> {
   var isSelected = [true, false, false, false];
-
   Widget generateBottomNavbarItem(IconData icon, int indx) {
     final color = isSelected[indx] ? primary : Colors.transparent;
-
-    int _calculateTheIndex(BuildContext context) {
-      final location = GoRouter.of(
-        context,
-      ).namedLocation(AppRoute.values[indx].name);
-
-      if (location == AppRoute.home.name) {
-        return 0;
-      } else if (location == AppRoute.actions.name) {
-        return 1;
-      } else if (location == AppRoute.tracker.name) {
-        return 2;
-      } else if (location == AppRoute.profile.name) {
-        return 3;
-      }
-      return 0;
-    }
-
-    return Consumer(
-      builder: (context, ref, child) {
-        return Material(
+    return Material(
           color: Colors.transparent,
           animationDuration: const Duration(milliseconds: 120),
           clipBehavior: Clip.hardEdge,
@@ -57,9 +34,8 @@ class _BottomNavbarState extends State<BottomNavbar> {
                     isSelected[indx] = true;
                   });
                 });
+                context.goNamed(AppRoute.values[indx].name);
               }
-              ref.read(bottomNavbarCurrentIndex.notifier).state = indx;
-              context.pushNamed(AppRoute.values[indx].name);
             },
             child: Container(
               width: 60,
@@ -72,8 +48,6 @@ class _BottomNavbarState extends State<BottomNavbar> {
             ),
           ),
         );
-      },
-    );
   }
 
   @override

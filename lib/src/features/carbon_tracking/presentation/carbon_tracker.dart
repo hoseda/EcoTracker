@@ -10,6 +10,6 @@ class CarbonTracker extends StatefulWidget {
 class _ProfileState extends State<CarbonTracker> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(),body: Center(child: const Text("carbon tracker")));
+    return Center(child: const Text("carbon tracker"));
   }
 }
