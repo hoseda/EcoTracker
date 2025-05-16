@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgound,
-      floatingActionButtonLocation:FloatingActionButtonLocation.centerFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: BottomNavbar(),
       appBar: AppBar(
         backgroundColor: backgound,
@@ -354,8 +354,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                // todo : add popular article in future plans.
 
+                // todo : add popular article in future plans.
               ],
             ),
           ),
