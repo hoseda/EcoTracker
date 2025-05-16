@@ -1,7 +1,6 @@
 import 'package:eco_tracker/src/common_widgets/scaffold_with_navbar.dart';
 import 'package:eco_tracker/src/features/carbon_tracking/presentation/carbon_tracker.dart';
 import 'package:eco_tracker/src/features/eco_actions/presentation/eco_actions.dart';
-import 'package:eco_tracker/src/features/home/presentation/bottom_navbar.dart';
 import 'package:eco_tracker/src/features/home/presentation/home_page.dart';
 import 'package:eco_tracker/src/features/profile/presentation/profile.dart';
 import 'package:flutter/widgets.dart';

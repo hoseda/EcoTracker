@@ -1,6 +1,4 @@
-import 'package:eco_tracker/src/common_widgets/scaffold_with_navbar.dart';
 import 'package:eco_tracker/src/core/constants/home_page_constant.dart';
-import 'package:eco_tracker/src/features/home/presentation/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:eco_tracker/src/core/constants/colors.dart';
 
