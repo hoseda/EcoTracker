@@ -13,7 +13,7 @@ final router = GoRouter(
   routes: [
     ShellRoute(
       builder: (context, state, child) {
-        return ScaffoldWithNavbar(child: child);
+        return ScaffoldWithNavbar(child,state);
       },
       routes: [
         GoRoute(
