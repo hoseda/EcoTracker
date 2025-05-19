@@ -20,7 +20,19 @@ class ScaffoldWithNavbar extends ConsumerWidget {
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: BottomNavbar(),
-      appBar: appbar,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 300),
+          switchInCurve: Curves.easeInBack,
+          switchOutCurve: Curves.easeOutBack,
+          transitionBuilder:
+              (child, animation) =>
+                  FadeTransition(opacity: animation, child: child),
+          child: appbar,
+        ),
+
+      ),
     );
   }
 }

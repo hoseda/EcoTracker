@@ -1,49 +1,76 @@
 import 'package:eco_tracker/src/core/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 final Map<String, AppBar> appbars = {
   'home': AppBar(
+    key: ValueKey('home'),
     backgroundColor: backgound,
-    leading: Icon(Icons.menu_rounded, color: Colors.white, size: 26),
+    leading: IconButton(
+      onPressed: () {},
+      splashColor: primary,
+      splashRadius: 10,
+      icon: SvgPicture.asset(
+        'assets/icons/menu.svg',
+        width: 22,
+        height: 22,
+        colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+      ),
+    ),
     actions: [
       Padding(
         padding: const EdgeInsets.only(right: 12.0),
-        child: Icon(
-          Icons.notifications_none_rounded,
-          color: Colors.white,
-          size: 26,
+        child: IconButton(
+          onPressed: () {},
+          splashColor: primary,
+          splashRadius: 10,
+          icon: SvgPicture.asset(
+            'assets/icons/bell.svg',
+            width: 26,
+            height: 26,
+            colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+          ),
         ),
       ),
     ],
   ),
-  'actions':AppBar(
+  'actions': AppBar(
+    key: ValueKey('actions'),
     backgroundColor: backgound,
-    leading: Icon(Icons.arrow_back_ios_rounded, color: Colors.white, size: 26),
     actions: [
       Padding(
-        padding: const EdgeInsets.only(right: 12.0),
-        child: Icon(
-          Icons.qr_code_scanner_rounded,
-          color: Colors.white,
-          size: 26,
+        padding: const EdgeInsets.only(right: 14.0),
+        child: IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(
+            'assets/icons/scan.svg',
+            width: 24,
+            height: 24,
+            colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+          ),
         ),
       ),
     ],
   ),
-  'tracker':AppBar(
+  'tracker': AppBar(
+    key: ValueKey('tracker'),
+
     backgroundColor: backgound,
-    leading: Icon(Icons.arrow_back_ios_rounded, color: Colors.white, size: 26),
   ),
-  'profile':AppBar(
+  'profile': AppBar(
+    key: ValueKey('profile'),
     backgroundColor: backgound,
-    leading: Icon(Icons.arrow_back_ios_rounded, color: Colors.white, size: 26),
     actions: [
       Padding(
         padding: const EdgeInsets.only(right: 12.0),
-        child: Icon(
-          Icons.settings_rounded,
-          color: Colors.white,
-          size: 26,
+        child: IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(
+            'assets/icons/settings.svg',
+            width: 24,
+            height: 24,
+            colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+          ),
         ),
       ),
     ],

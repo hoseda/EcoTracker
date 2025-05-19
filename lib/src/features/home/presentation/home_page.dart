@@ -1,6 +1,7 @@
 import 'package:eco_tracker/src/core/constants/home_page_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:eco_tracker/src/core/constants/colors.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -56,7 +57,16 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(Icons.paid, color: primary),
+                          SvgPicture.asset(
+                            'assets/icons/coins.svg',
+                            width: 27,
+                            height: 27,
+                            fit: BoxFit.cover,
+                            colorFilter: ColorFilter.mode(
+                              primary,
+                              BlendMode.srcIn,
+                            ),
+                          ),
                           const SizedBox(width: 10),
                           Text(
                             // todo : user points
@@ -147,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   itemBuilder: (context, index) {
                     final shadow = homePageConstant;
-                    final icon = shadow[index]["icon"] as IconData;
+                    final icon = shadow[index]["icon"];
                     final text = shadow[index]["text"] as String;
                     final subtext = shadow[index]["subtext"] as String;
 
@@ -162,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(icon, color: primary, size: 28),
+                            Icon(icon as IconData, color: primary, size: 27),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -293,7 +303,16 @@ class _HomePageState extends State<HomePage> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Icon(Icons.paid, color: secondary),
+                                            SvgPicture.asset(
+                                              'assets/icons/coins.svg',
+                                              width: 25,
+                                              height: 25,
+                                              fit: BoxFit.cover,
+                                              colorFilter: ColorFilter.mode(
+                                                secondary,
+                                                BlendMode.srcIn,
+                                              ),
+                                            ),
                                             const SizedBox(width: 5),
                                             Text(
                                               // todo : user points
