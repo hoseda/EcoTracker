@@ -114,8 +114,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         ),
-                        GestureDetector(
-                          onTap: () {},
+                        TextButton(
+                          style: ButtonStyle(splashFactory: NoSplash.splashFactory),
+                          onPressed: () {},
                           child: Container(
                             width: 95,
                             height: 33,
