@@ -5,6 +5,6 @@ final profileCardConstants = [
 ];
 
 final profileSettings = [
-  {'title' : 'Dashboard' , 'desc' : 'Your progress tracker' , 'icon' : 'assets/icons/chart.svg'},
+  {'title' : 'Dashboard' , 'desc' : 'Your progress tracker' , 'icon' : 'assets/icons/chart2.svg'},
   {'title' : 'My Activity' , 'desc' : 'Your enviromental actions' , 'icon' : 'assets/icons/diary.svg'},
 ];

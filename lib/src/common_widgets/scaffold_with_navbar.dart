@@ -20,6 +20,7 @@ class ScaffoldWithNavbar extends ConsumerWidget {
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: BottomNavbar(),
+      resizeToAvoidBottomInset: true,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: AnimatedSwitcher(

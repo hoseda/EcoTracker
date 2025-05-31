@@ -14,8 +14,9 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+    final bottomInset = MediaQuery.of(context).viewPadding.bottom;
+    return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
       child: Column(
         children: [
           ProfileAvatar(),
@@ -34,7 +35,7 @@ class _ProfileState extends State<Profile> {
             '"small action , big impact."',
             style: TextStyle(color: iconbg, fontSize: 13),
           ),
-          const SizedBox(height: 45),
+          const SizedBox(height: 35),
           Row(
             children: [
               Text(
@@ -163,22 +164,81 @@ class _ProfileState extends State<Profile> {
               ),
             ],
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount:3,
-              scrollDirection: Axis.vertical,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  child: Container(
-                    height: 60,
-                    width: double.maxFinite,
-                    color: Colors.amber,
+          ...List.generate(2, (index) {
+            final cont = profileSettings;
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+              child: GestureDetector(
+                onTap: () {},
+                child: Container(
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: button,
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                );
-              },
-            ),
-          ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 45,
+                        height: 45,
+                        margin: const EdgeInsets.only(left: 15),
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: backgound.withAlpha(150),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(2),
+                          child: SvgPicture.asset(
+                            cont[index]['icon'] as String,
+                            fit: BoxFit.scaleDown,
+                            colorFilter: ColorFilter.mode(
+                              primary,
+                              BlendMode.srcIn,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 15),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            cont[index]['title'] as String,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                          Text(
+                            cont[index]['desc'] as String,
+                            style: TextStyle(
+                              color: iconbg,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 25),
+                        child: Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          color: Colors.white,
+                          size: 21,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }),
+          SizedBox(height: bottomInset + 80),
         ],
       ),
     );
