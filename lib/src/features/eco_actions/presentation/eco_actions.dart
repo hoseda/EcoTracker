@@ -28,49 +28,48 @@ class _ProfileState extends State<EcoActions>
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraint) {
-        return SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: constraint.maxHeight),
-            child: Column(
-              children: [
-                Container(
-                  height: 60,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: button,
-                  ),
-                  child: TabBar(
-                    controller: _controller,
-                    indicator: BoxDecoration(
-                      color: iconbg.withAlpha(130),
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    labelColor: Colors.white,
-                    unselectedLabelColor: iconbg,
-                    labelStyle: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    dividerColor: Colors.transparent,
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    padding: EdgeInsets.all(3),
-                    tabs: [Tab(text: 'Habits'), Tab(text: 'Challenges')],
-                  ),
+    return DefaultTabController(
+      length: 2,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 15),
+        child: Column(
+          children: [
+            Container(
+              height: 60,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: button,
+              ),
+              child: TabBar(
+                indicator: BoxDecoration(
+                  color: iconbg.withAlpha(130),
+                  borderRadius: BorderRadius.circular(30),
                 ),
-                Expanded(
-                  child: TabBarView(
-                    controller: _controller,
-                    children: [Habits(), Challenges()],
-                  ),
+                labelColor: Colors.white,
+                unselectedLabelColor: iconbg,
+                labelStyle: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
                 ),
-              ],
+                dividerColor: Colors.transparent,
+                indicatorSize: TabBarIndicatorSize.tab,
+                padding: EdgeInsets.all(3),
+                tabs: [Tab(text: 'Habits'), Tab(text: 'Challenges')],
+              ),
             ),
-          ),
-        );
-      },
+            Expanded(
+              child: TabBarView(
+                physics: BouncingScrollPhysics(),
+                children: [
+                  Habits(),
+                  Center(child: Text("challenges")),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
